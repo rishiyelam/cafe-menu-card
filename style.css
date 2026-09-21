@@ -3647,3 +3647,339 @@ header {
     }
 
 }
+/* =========================================
+   CAFÉ NOIR — MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- GENERAL ---------- */
+
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        width: 92%;
+        padding: 20px 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        font-size: 1.35rem;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: .78rem;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 90vh;
+        padding: 150px 7% 80px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 14vw, 4.5rem);
+        line-height: 1.05;
+    }
+
+    .hero p {
+        font-size: .95rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+    /* ---------- SECTION HEADINGS ---------- */
+
+    .section-heading {
+        text-align: center;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+        line-height: 1.1;
+    }
+
+
+    /* ---------- MOOD CARDS ---------- */
+
+    .mood-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .mood-card {
+        width: 100%;
+    }
+
+
+    /* ---------- COFFEE MENU ---------- */
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-card {
+        width: 100%;
+    }
+
+    .menu-card img {
+        width: 100%;
+        height: auto;
+        max-height: 280px;
+        object-fit: cover;
+    }
+
+
+    /* ---------- ICE CREAM ---------- */
+
+    .icecream-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .icecream-card {
+        width: 100%;
+    }
+
+    .icecream-image {
+        height: 240px;
+    }
+
+
+    /* ---------- SUNDAE ---------- */
+
+    .sundae-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sundae-step {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(213,154,103,.20);
+    }
+
+    .sundae-step:last-child {
+        border-bottom: none;
+    }
+
+
+    /* ---------- SPECIAL CARDS ---------- */
+
+    .signature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .signature-card {
+        min-height: auto;
+        padding: 30px;
+    }
+
+
+    /* ---------- SPECIALS HERO ---------- */
+
+    .specials-hero {
+        min-height: 75vh;
+        padding: 150px 7% 80px;
+        text-align: center;
+    }
+
+    .specials-intro {
+        width: 100%;
+    }
+
+    .specials-intro h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .specials-intro > p:last-child {
+        font-size: .95rem;
+    }
+
+
+    /* ---------- EXPERIENCE ---------- */
+
+    .experience-section {
+        min-height: 400px;
+        padding: 80px 7%;
+    }
+
+    .experience-content h2 {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-hero {
+        min-height: 75vh;
+        padding: 150px 7% 80px;
+    }
+
+    .about-hero-content h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .story-section {
+        padding: 80px 7%;
+    }
+
+    .story-content h2 {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .value-card {
+        padding: 35px 25px;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-hero {
+        min-height: 70vh;
+        padding: 150px 7% 80px;
+    }
+
+    .contact-hero-content h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .contact-details {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 80px 7%;
+    }
+
+    .contact-form-box {
+        padding: 30px 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-item {
+        padding: 20px;
+    }
+
+
+    /* ---------- CTA BUTTONS ---------- */
+
+    .primary-button {
+        display: inline-block;
+        text-align: center;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 50px 7%;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================
+   EXTRA SMALL PHONES
+========================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding-top: 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: .72rem;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .hero {
+        padding: 140px 6% 70px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .section-heading h2 {
+        font-size: 2.3rem;
+    }
+
+    .specials-intro h1,
+    .about-hero-content h1,
+    .contact-hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .signature-card {
+        padding: 25px;
+    }
+
+    .special-number {
+        font-size: 4.5rem;
+    }
+
+    .contact-form-box h2 {
+        font-size: 2.2rem;
+    }
+
+}
