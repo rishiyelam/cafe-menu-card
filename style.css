@@ -1,0 +1,3649 @@
+/* ================================
+   CAFÉ NOIR - CSS
+   Step 1: Foundation
+================================ */
+
+
+/* ---------- Google Font ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* ---------- Color Variables ---------- */
+
+:root {
+    --espresso: #211815;
+    --dark-coffee: #30221d;
+    --coffee: #5a3e32;
+    --caramel: #b77945;
+    --cream: #f8f1e7;
+    --light-cream: #fffaf3;
+    --text: #302521;
+    --muted: #796d67;
+    --white: #ffffff;
+}
+
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+/* ---------- Common Container ---------- */
+
+section {
+    padding: 100px 8%;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+ul {
+    list-style: none;
+}
+/* ================================
+   NAVIGATION BAR
+================================ */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+
+.navbar {
+    width: 100%;
+    padding: 28px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+
+.nav-links a {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+
+/* Animated underline */
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--caramel);
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+.nav-links a:hover {
+    color: #e5b98e;
+}
+
+
+/* Visit Us Button */
+
+.nav-button {
+    padding: 11px 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+
+    color: var(--white);
+
+    font-size: 0.85rem;
+
+    transition: 0.3s ease;
+}
+
+
+.nav-button:hover {
+    background-color: var(--white);
+    color: var(--espresso);
+}
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 17, 14, 0.96) 0%,
+            rgba(35, 24, 20, 0.82) 50%,
+            rgba(35, 24, 20, 0.35) 100%
+        ),
+        url("images/coffee.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-content {
+    max-width: 700px;
+    color: var(--white);
+}
+
+
+.small-title {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: #d9a675;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(3.5rem, 8vw, 7rem);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    color: #d59a67;
+    font-style: italic;
+}
+
+
+.hero-text {
+    max-width: 500px;
+
+    font-size: 1.05rem;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    margin-bottom: 35px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* Primary button */
+
+.primary-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background-color: var(--caramel);
+    color: var(--white);
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    background-color: #c48752;
+}
+
+
+/* Secondary button */
+
+.secondary-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    color: var(--white);
+
+    border-radius: 30px;
+
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+
+.secondary-button:hover {
+    background-color: var(--white);
+    color: var(--espresso);
+
+    transform: translateY(-3px);
+}
+/* ================================
+   SECTION HEADINGS
+================================ */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading p {
+    color: var(--caramel);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--espresso);
+    line-height: 1.2;
+}
+/* ================================
+   MOOD SECTION
+================================ */
+
+.mood-section {
+    background-color: var(--light-cream);
+}
+
+
+.mood-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+.mood-card {
+    background-color: var(--white);
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    border: 1px solid #eee3d6;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+
+.mood-icon {
+    font-size: 2.8rem;
+
+    margin-bottom: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.mood-card h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.5rem;
+
+    color: var(--espresso);
+
+    margin-bottom: 12px;
+}
+
+
+.mood-card p {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+/* Hover Effect */
+
+.mood-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 45px rgba(45, 30, 22, 0.12);
+
+    border-color: #d6b08b;
+}
+
+
+.mood-card:hover .mood-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+/* ================================
+   COFFEE MENU
+================================ */
+
+.menu-section {
+    background-color: var(--cream);
+}
+
+
+.menu-grid {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.menu-card {
+    background-color: var(--white);
+
+    padding: 30px;
+
+    border-radius: 14px;
+
+    border: 1px solid #eadfd3;
+
+    position: relative;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+.menu-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(45, 30, 22, 0.1);
+}
+
+
+.menu-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 12px;
+}
+
+
+.menu-top h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.4rem;
+
+    color: var(--espresso);
+}
+
+
+.menu-top span {
+    color: var(--caramel);
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+}
+
+
+.menu-card p {
+    color: var(--muted);
+
+    font-size: 0.9rem;
+
+    margin-bottom: 18px;
+}
+
+
+.menu-card small {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background-color: #f3e5d5;
+
+    color: var(--coffee);
+
+    border-radius: 20px;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+/* ================================
+   ICE CREAM SECTION
+================================ */
+
+.icecream-section {
+    background-color: var(--dark-coffee);
+
+    color: var(--white);
+}
+
+
+.icecream-section .section-heading h2 {
+    color: var(--white);
+}
+
+
+.icecream-section .section-heading p {
+    color: #d59a67;
+}
+
+
+.icecream-grid {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.icecream-card {
+    background-color: #3b2b25;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+
+.icecream-card:hover {
+    transform: translateY(-10px);
+
+    background-color: #49352c;
+}
+
+
+.icecream-image {
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background-color: var(--cream);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 3.5rem;
+}
+
+
+.icecream-card h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.3rem;
+
+    margin-bottom: 8px;
+}
+
+
+.icecream-card p {
+    color: #e0ad7b;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.icecream-card span {
+    font-size: 0.65rem;
+
+    letter-spacing: 1.5px;
+
+    color: #bbaaa1;
+}
+/* ================================
+   SIGNATURE CREATIONS
+================================ */
+
+.special-section {
+    background-color: var(--light-cream);
+}
+
+
+.special-grid {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.special-card {
+    position: relative;
+
+    padding: 45px 35px;
+
+    min-height: 280px;
+
+    background-color: var(--espresso);
+
+    color: var(--white);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+
+/* Decorative circle */
+
+.special-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background-color: rgba(183, 121, 69, 0.18);
+
+    top: -70px;
+    right: -50px;
+
+    transition: transform 0.4s ease;
+}
+
+
+.special-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 45px rgba(35, 24, 20, 0.2);
+}
+
+
+.special-card:hover::before {
+    transform: scale(1.4);
+}
+
+
+/* Small label */
+
+.tag {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    padding: 6px 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 20px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 1.5px;
+
+    color: #e1b083;
+}
+
+
+.special-card h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.7rem;
+
+    margin-bottom: 12px;
+
+    position: relative;
+}
+
+
+.special-card p {
+    color: #c7b8b0;
+
+    font-size: 0.9rem;
+
+    margin-bottom: 20px;
+
+    position: relative;
+}
+
+
+.special-card strong {
+    color: #d9a16c;
+
+    font-size: 1.2rem;
+
+    position: relative;
+}
+/* ================================
+   BUILD YOUR SUNDAE
+================================ */
+
+.sundae-section {
+    background-color: var(--cream);
+}
+
+
+.sundae-container {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0;
+
+    border: 1px solid #dfd0c1;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background-color: var(--white);
+}
+
+
+.sundae-step {
+    padding: 45px 30px;
+
+    text-align: center;
+
+    position: relative;
+
+    transition: background-color 0.3s ease;
+}
+
+
+.sundae-step:not(:last-child) {
+    border-right: 1px solid #e7dbce;
+}
+
+
+.sundae-step:hover {
+    background-color: #fbf3e9;
+}
+
+
+.sundae-step > span {
+    display: inline-flex;
+
+    width: 45px;
+    height: 45px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--espresso);
+
+    color: var(--white);
+
+    font-size: 0.8rem;
+
+    margin-bottom: 20px;
+}
+
+
+.sundae-step h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.4rem;
+
+    margin-bottom: 12px;
+
+    color: var(--espresso);
+}
+
+
+.sundae-step p {
+    color: var(--muted);
+
+    font-size: 0.85rem;
+
+    line-height: 1.7;
+}
+/* ================================
+   ABOUT SECTION
+================================ */
+
+.about-section {
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(33, 24, 21, 0.95),
+            rgba(33, 24, 21, 0.65)
+        ),
+        url("images/cafe.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: var(--white);
+}
+
+
+.about-content {
+    max-width: 650px;
+}
+
+
+.about-content > p:first-child {
+    color: #d59a67;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+
+.about-content p:last-child {
+    color: rgba(255, 255, 255, 0.75);
+
+    max-width: 550px;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+/* ================================
+   CONTACT SECTION
+================================ */
+
+.contact-section {
+    text-align: center;
+
+    background-color: var(--caramel);
+
+    color: var(--white);
+}
+
+
+.contact-section > p:first-child {
+    font-size: 0.75rem;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.contact-section h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    margin-bottom: 20px;
+}
+
+
+.contact-section p:not(:first-child) {
+    color: rgba(255, 255, 255, 0.85);
+
+    margin: 5px 0;
+}
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background-color: #17100e;
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 45px 8%;
+}
+
+
+footer h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.5rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+footer p {
+    color: #9d8e87;
+
+    font-size: 0.8rem;
+
+    margin: 5px 0;
+}
+/* ================================
+   MENU PAGE
+================================ */
+
+.menu-page {
+    padding-top: 160px;
+    min-height: 100vh;
+    background-color: var(--cream);
+}
+
+
+.menu-page .section-heading h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: var(--espresso);
+}
+
+
+.menu-page .section-heading span {
+    display: block;
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+
+.menu-category {
+    max-width: 1100px;
+    margin: 70px auto 0;
+}
+
+
+.menu-category h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--espresso);
+    margin-bottom: 25px;
+}
+.menu-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: block;
+}
+/* ================================
+   PREMIUM MENU PAGE BACKGROUND
+================================ */
+
+.menu-page {
+    position: relative;
+    min-height: 100vh;
+    padding: 160px 8% 100px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 10% 20%,
+            rgba(183, 121, 69, 0.16),
+            transparent 25%),
+
+        radial-gradient(circle at 90% 15%,
+            rgba(90, 62, 50, 0.13),
+            transparent 25%),
+
+        radial-gradient(circle at 80% 85%,
+            rgba(183, 121, 69, 0.12),
+            transparent 30%),
+
+        linear-gradient(
+            135deg,
+            #fffaf3 0%,
+            #f5eadc 45%,
+            #eee0cf 100%
+        );
+}
+
+/* Decorative coffee-brown circles */
+
+.menu-page::before {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(90, 62, 50, 0.06);
+
+    top: 80px;
+    left: -180px;
+}
+
+.menu-page::after {
+    content: "";
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(183, 121, 69, 0.08);
+
+    right: -200px;
+    bottom: 50px;
+}
+
+/* Keep content above decorations */
+
+.menu-page > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Menu heading */
+
+.menu-page .section-heading {
+    margin-bottom: 75px;
+}
+
+.menu-page .section-heading p {
+    color: var(--caramel);
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.menu-page .section-heading h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    color: var(--espresso);
+    margin-bottom: 15px;
+}
+
+/* Small decorative line */
+
+.menu-page .section-heading h1::after {
+    content: "";
+    display: block;
+
+    width: 70px;
+    height: 3px;
+
+    background: var(--caramel);
+
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.menu-page .section-heading span {
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+/* Category headings */
+
+.menu-category {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1100px;
+    margin: 70px auto 0;
+}
+
+.menu-category h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--espresso);
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.menu-category h2::after {
+    content: "";
+
+    height: 1px;
+    flex: 1;
+
+    background: linear-gradient(
+        to right,
+        #c49a72,
+        transparent
+    );
+}
+
+/* Menu cards */
+
+.menu-card {
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(183, 121, 69, 0.18);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(48, 34, 29, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(183, 121, 69, 0.45);
+
+    box-shadow:
+        0 20px 45px rgba(48, 34, 29, 0.16);
+}
+
+/* Product images */
+
+.menu-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.menu-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card content spacing */
+
+.menu-card .menu-top,
+.menu-card > p,
+.menu-card > small {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.menu-card .menu-top {
+    margin-top: 20px;
+}
+
+.menu-card > p {
+    margin-bottom: 18px;
+}
+/* =================================
+   PREMIUM NAVBAR
+================================= */
+
+header {
+    position: fixed;
+    background: rgba(20, 14, 12, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.nav-links {
+    gap: 40px;
+}
+
+.nav-links a {
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-button {
+    border-color: rgba(213,154,103,0.7);
+}
+/* =================================
+   CRAVING CARDS
+================================= */
+
+.mood-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 50px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff9f1
+        );
+}
+
+.mood-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: rgba(183,121,69,0.08);
+
+    top: -50px;
+    right: -40px;
+
+    transition: transform 0.4s ease;
+}
+
+.mood-card:hover::before {
+    transform: scale(1.7);
+}
+
+.mood-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5e7d6;
+
+    border-radius: 50%;
+
+    font-size: 2rem;
+}
+.menu-card img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.menu-card:hover img {
+    transform: scale(1.04);
+}
+.menu-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+
+    padding: 160px 8% 100px;
+
+    background-color: #3b251b;
+
+    background-image:
+        linear-gradient(
+            rgba(35, 22, 15, 0.18),
+            rgba(35, 22, 15, 0.18)
+        ),
+        url("images/menu-background.jpg");
+
+    background-size:
+        100% auto,
+        100% auto;
+
+    background-position:
+        center,
+        top center;
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
+
+    background-attachment: scroll;
+}
+.menu-card {
+    position: relative;
+    overflow: hidden;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 18px;
+
+    box-shadow: none;
+
+    padding: 0 0 25px;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.20);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(33, 24, 21, 0.82);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.menu-page .section-heading p {
+    color: #d9a16c;
+}
+
+.menu-page .section-heading h1 {
+    color: #fffaf3;
+}
+
+.menu-page .section-heading span {
+    color: rgba(255, 250, 243, 0.78);
+}
+
+.menu-category h2 {
+    color: #fffaf3;
+}
+
+.menu-top h3 {
+    color: #fffaf3;
+}
+
+.menu-top span {
+    color: #e0a56e;
+}
+
+.menu-card p {
+    color: rgba(255, 250, 243, 0.75);
+}
+
+.menu-card small {
+    background: rgba(255, 220, 180, 0.12);
+    border: 1px solid rgba(255, 220, 180, 0.35);
+    color: #f0c18d;
+}
+.menu-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 16px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.menu-card:hover img {
+    transform: scale(1.025);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.35);
+}
+.menu-category h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.menu-category h2::after {
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(220, 170, 110, 0.8),
+            rgba(220, 170, 110, 0)
+        );
+}
+.menu-page .menu-grid {
+    background: transparent;
+}
+
+.menu-category {
+    background: transparent;
+}
+
+.menu-page::before,
+.menu-page::after {
+    display: none;
+}
+/* =========================================
+   DARK CAFÉ NOIR HOME SECTIONS
+========================================= */
+
+
+/* =========================================
+   WHAT ARE YOU CRAVING
+========================================= */
+
+.mood-section {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(183, 121, 69, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(183, 121, 69, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #211815 0%,
+            #30221d 50%,
+            #3b2922 100%
+        );
+
+    color: #fffaf3;
+}
+
+
+/* Decorative circle */
+
+.mood-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    left: -220px;
+    top: 40px;
+
+    background: rgba(183, 121, 69, 0.08);
+
+    border: 1px solid rgba(213, 154, 103, 0.16);
+
+    pointer-events: none;
+}
+
+
+/* Right decorative circle */
+
+.mood-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    right: -170px;
+    bottom: -100px;
+
+    background: rgba(213, 154, 103, 0.07);
+
+    border: 1px solid rgba(213, 154, 103, 0.13);
+
+    pointer-events: none;
+}
+
+
+/* Keep content above decorations */
+
+.mood-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Heading */
+
+.mood-section .section-heading p {
+    color: #d59a67;
+}
+
+.mood-section .section-heading h2 {
+    color: #fffaf3;
+}
+
+
+/* Craving cards */
+
+.mood-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3a2922,
+            #2b1e19
+        );
+
+    border: 1px solid rgba(213, 154, 103, 0.18);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* Decorative glow inside card */
+
+.mood-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    right: -75px;
+    top: -75px;
+
+    background: rgba(183, 121, 69, 0.12);
+
+    transition: transform 0.4s ease;
+}
+
+.mood-card:hover::before {
+    transform: scale(1.5);
+}
+
+
+.mood-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(213, 154, 103, 0.45);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Card text */
+
+.mood-card h3 {
+    color: #fffaf3;
+}
+
+.mood-card p {
+    color: #c7b8b0;
+}
+
+
+/* Icon */
+
+.mood-icon {
+    background: #f3e2ce;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   CRAFTED COFFEE
+========================================= */
+
+.menu-section {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(183, 121, 69, 0.18),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 5% 85%,
+            rgba(183, 121, 69, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #30221d,
+            #211815 55%,
+            #3a2821
+        );
+
+    color: #fffaf3;
+}
+
+
+/* Large decorative circle */
+
+.menu-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    right: -260px;
+    top: 20px;
+
+    background: rgba(183, 121, 69, 0.07);
+
+    border: 1px solid rgba(213, 154, 103, 0.15);
+
+    pointer-events: none;
+}
+
+
+/* Bottom decorative circle */
+
+.menu-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    left: -170px;
+    bottom: -80px;
+
+    background: rgba(183, 121, 69, 0.07);
+
+    border: 1px solid rgba(213, 154, 103, 0.12);
+
+    pointer-events: none;
+}
+
+
+/* Content above decoration */
+
+.menu-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Coffee heading */
+
+.menu-section .section-heading p {
+    color: #d59a67;
+}
+
+.menu-section .section-heading h2 {
+    color: #fffaf3;
+}
+
+
+/* Decorative line */
+
+.menu-section .section-heading h2::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 3px;
+
+    margin: 18px auto 0;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #b77945,
+            transparent
+        );
+
+    border-radius: 50%;
+}
+
+
+/* Coffee cards */
+
+.menu-section .menu-card {
+    background:
+        linear-gradient(
+            145deg,
+            #3b2a23,
+            #2b1e19
+        );
+
+    border: 1px solid rgba(213, 154, 103, 0.18);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.28);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.menu-section .menu-card:hover {
+    transform: translateY(-9px);
+
+    border-color: rgba(213, 154, 103, 0.45);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.38);
+}
+
+
+/* Coffee card text */
+
+.menu-section .menu-top h3 {
+    color: #fffaf3;
+}
+
+.menu-section .menu-top span {
+    color: #d9a16c;
+}
+
+.menu-section .menu-card p {
+    color: #c7b8b0;
+}
+
+
+/* Tags */
+
+.menu-section .menu-card small {
+    background: rgba(213, 154, 103, 0.12);
+
+    border: 1px solid rgba(213, 154, 103, 0.22);
+
+    color: #d9a16c;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .mood-section::before {
+        width: 230px;
+        height: 230px;
+        left: -150px;
+    }
+
+    .mood-section::after {
+        width: 200px;
+        height: 200px;
+        right: -120px;
+    }
+
+    .menu-section::before {
+        width: 280px;
+        height: 280px;
+        right: -180px;
+    }
+
+    .menu-section::after {
+        width: 180px;
+        height: 180px;
+        left: -110px;
+    }
+}
+/* =========================================
+   BUILD YOUR SUNDAE - DARK CAFÉ NOIR
+========================================= */
+
+.sundae-section {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(183, 121, 69, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(183, 121, 69, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #211815 0%,
+            #30221d 50%,
+            #3b2922 100%
+        );
+
+    color: #fffaf3;
+}
+
+
+/* Decorative circle - left */
+
+.sundae-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    left: -230px;
+    bottom: -100px;
+
+    background: rgba(183, 121, 69, 0.08);
+
+    border: 1px solid rgba(213, 154, 103, 0.16);
+
+    pointer-events: none;
+}
+
+
+/* Decorative circle - right */
+
+.sundae-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    right: -170px;
+    top: 50px;
+
+    background: rgba(213, 154, 103, 0.06);
+
+    border: 1px solid rgba(213, 154, 103, 0.14);
+
+    pointer-events: none;
+}
+
+
+/* Keep content above decoration */
+
+.sundae-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Heading */
+
+.sundae-section .section-heading p {
+    color: #d59a67;
+}
+
+.sundae-section .section-heading h2 {
+    color: #fffaf3;
+}
+
+
+/* Decorative line below heading */
+
+.sundae-section .section-heading h2::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 3px;
+
+    margin: 18px auto 0;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #b77945,
+            transparent
+        );
+
+    border-radius: 50%;
+}
+
+
+/* Sundae container */
+
+.sundae-container {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b2a23,
+            #2b1e19
+        );
+
+    border: 1px solid rgba(213, 154, 103, 0.25);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+/* Individual steps */
+
+.sundae-step {
+    background: transparent;
+
+    transition:
+        background-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+/* Divider between steps */
+
+.sundae-step:not(:last-child) {
+    border-right: 1px solid rgba(213, 154, 103, 0.20);
+}
+
+
+/* Hover effect */
+
+.sundae-step:hover {
+    background-color: rgba(183, 121, 69, 0.10);
+}
+
+
+/* Step numbers */
+
+.sundae-step > span {
+    background:
+        linear-gradient(
+            145deg,
+            #b77945,
+            #8e5935
+        );
+
+    color: #fffaf3;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.30);
+}
+
+
+/* Step headings */
+
+.sundae-step h3 {
+    color: #fffaf3;
+}
+
+
+/* Step descriptions */
+
+.sundae-step p {
+    color: #c7b8b0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .sundae-section::before {
+        width: 230px;
+        height: 230px;
+        left: -150px;
+    }
+
+    .sundae-section::after {
+        width: 200px;
+        height: 200px;
+        right: -120px;
+    }
+
+    .sundae-step:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(213, 154, 103, 0.20);
+    }
+}
+/* =========================================
+   SOMETHING SWEET - DARK CAFÉ NOIR
+========================================= */
+
+.icecream-section {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(183, 121, 69, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(183, 121, 69, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #211815 0%,
+            #30221d 50%,
+            #3b2922 100%
+        );
+
+    color: #fffaf3;
+}
+
+
+/* Decorative circle - left */
+
+.icecream-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    left: -220px;
+    top: 40px;
+
+    background: rgba(183, 121, 69, 0.08);
+
+    border: 1px solid rgba(213, 154, 103, 0.16);
+
+    pointer-events: none;
+}
+
+
+/* Decorative circle - right */
+
+.icecream-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    right: -180px;
+    bottom: -100px;
+
+    background: rgba(213, 154, 103, 0.07);
+
+    border: 1px solid rgba(213, 154, 103, 0.14);
+
+    pointer-events: none;
+}
+
+
+/* Keep content above decorations */
+
+.icecream-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Section heading */
+
+.icecream-section .section-heading p {
+    color: #d59a67;
+}
+
+.icecream-section .section-heading h2 {
+    color: #fffaf3;
+}
+
+
+/* Decorative line */
+
+.icecream-section .section-heading h2::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 3px;
+
+    margin: 18px auto 0;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #b77945,
+            transparent
+        );
+
+    border-radius: 50%;
+}
+
+
+/* Ice cream cards */
+
+.icecream-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b2a23,
+            #2b1e19
+        );
+
+    border: 1px solid rgba(213, 154, 103, 0.18);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.28);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* Hover */
+
+.icecream-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(213, 154, 103, 0.45);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.38);
+}
+
+
+/* Ice cream image circle */
+
+.icecream-image {
+    background:
+        linear-gradient(
+            145deg,
+            #fff5e8,
+            #ead6c0
+        );
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Card heading */
+
+.icecream-card h3 {
+    color: #fffaf3;
+}
+
+
+/* Price */
+
+.icecream-card p {
+    color: #d9a16c;
+}
+
+
+/* Small description */
+
+.icecream-card span {
+    color: #bbaaa1;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .icecream-section::before {
+        width: 230px;
+        height: 230px;
+        left: -150px;
+    }
+
+    .icecream-section::after {
+        width: 200px;
+        height: 200px;
+        right: -120px;
+    }
+}
+/* =========================================
+   CAFÉ NOIR — SPECIALS PAGE
+========================================= */
+
+.specials-page {
+    background: #211815;
+    color: #fffaf3;
+}
+
+
+/* =========================================
+   SPECIALS HERO
+========================================= */
+
+.specials-hero {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 160px 8% 100px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(183,121,69,0.20),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(183,121,69,0.10),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #211815,
+            #3b2922
+        );
+}
+
+
+/* Decorative circle */
+
+.specials-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    right: -250px;
+    top: 50px;
+
+    border: 1px solid rgba(213,154,103,0.16);
+
+    background: rgba(183,121,69,0.06);
+}
+
+
+/* Second circle */
+
+.specials-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    left: -140px;
+    bottom: -100px;
+
+    border: 1px solid rgba(213,154,103,0.13);
+}
+
+
+/* Hero content */
+
+.specials-intro {
+    max-width: 750px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.special-label {
+    color: #d59a67;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+
+.specials-intro h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+
+    color: #fffaf3;
+}
+
+
+.specials-intro h1 span {
+    color: #d59a67;
+
+    font-style: italic;
+}
+
+
+.specials-intro > p:last-child {
+    max-width: 560px;
+
+    color: #c7b8b0;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   SIGNATURE SECTION
+========================================= */
+
+.signature-section {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 110px 8%;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(183,121,69,0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #30221d,
+            #211815
+        );
+}
+
+
+/* Heading */
+
+.signature-section .section-heading {
+    margin-bottom: 65px;
+}
+
+
+.signature-section .section-heading p {
+    color: #d59a67;
+}
+
+
+.signature-section .section-heading h2 {
+    color: #fffaf3;
+}
+
+
+.signature-section .section-heading span {
+    display: block;
+
+    margin-top: 15px;
+
+    color: #a9958b;
+}
+
+
+/* =========================================
+   SPECIAL CARDS
+========================================= */
+
+.signature-grid {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.signature-card {
+    position: relative;
+
+    min-height: 360px;
+
+    padding: 35px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b2a23,
+            #281c18
+        );
+
+    border: 1px solid rgba(213,154,103,0.16);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+.signature-card:hover {
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(213,154,103,0.45);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.38);
+}
+
+
+/* Large background number */
+
+.special-number {
+    position: absolute;
+
+    right: 25px;
+    top: 10px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 6rem;
+
+    color: rgba(255,255,255,0.035);
+
+    line-height: 1;
+}
+
+
+/* Icon */
+
+.special-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    margin-bottom: 25px;
+
+    font-size: 2rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0d7bb,
+            #c99d75
+        );
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+/* Card content */
+
+.special-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.special-tag {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(213,154,103,0.25);
+
+    color: #d59a67;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 15px;
+}
+
+
+.special-content h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1.8rem;
+
+    color: #fffaf3;
+
+    margin-bottom: 12px;
+}
+
+
+.special-content p {
+    color: #bbaaa1;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+.special-content strong {
+    color: #d9a16c;
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   EXPERIENCE SECTION
+========================================= */
+
+.experience-section {
+    min-height: 480px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 8%;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(183,121,69,0.20),
+            transparent 30%
+        ),
+        #17100e;
+}
+
+
+.experience-content {
+    max-width: 700px;
+}
+
+
+.experience-content > p {
+    color: #d59a67;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+
+.experience-content h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    line-height: 1.1;
+
+    color: #fffaf3;
+
+    margin-bottom: 25px;
+}
+
+
+.experience-content span {
+    color: #bbaaa1;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   SPECIAL CTA
+========================================= */
+
+.special-cta {
+    text-align: center;
+
+    padding: 110px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b77945,
+            #8d5936
+        );
+
+    color: white;
+}
+
+
+.special-cta > p {
+    font-size: 0.7rem;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.special-cta h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 30px;
+}
+
+
+.special-cta .primary-button {
+    background: #211815;
+
+    color: #fffaf3;
+}
+
+
+.special-cta .primary-button:hover {
+    background: #fffaf3;
+
+    color: #211815;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .signature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .specials-hero {
+        min-height: 70vh;
+
+        padding: 140px 7% 80px;
+    }
+
+    .signature-section {
+        padding: 80px 6%;
+    }
+
+    .signature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .signature-card {
+        min-height: 330px;
+    }
+
+    .experience-section {
+        min-height: 400px;
+
+        padding: 80px 7%;
+    }
+
+}
+/* =========================================
+   CAFÉ NOIR — ABOUT PAGE
+========================================= */
+
+.about-page {
+    background: #211815;
+    color: #fffaf3;
+}
+
+
+/* ABOUT HERO */
+
+.about-hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 160px 8% 100px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(183,121,69,0.22),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(183,121,69,0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #211815,
+            #3b2922
+        );
+}
+
+.about-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    right: -250px;
+    top: 40px;
+
+    border: 1px solid rgba(213,154,103,0.16);
+
+    background: rgba(183,121,69,0.05);
+}
+
+.about-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    left: -140px;
+    bottom: -100px;
+
+    border: 1px solid rgba(213,154,103,0.13);
+}
+
+.about-hero-content {
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.about-hero-content > p:first-child {
+    color: #d59a67;
+
+    font-size: .72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.about-hero-content h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+
+    color: #fffaf3;
+}
+
+.about-hero-content h1 span {
+    color: #d59a67;
+
+    font-style: italic;
+}
+
+.about-hero-text {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: #c7b8b0;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* STORY */
+
+.story-section {
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(183,121,69,0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #30221d,
+            #211815
+        );
+}
+
+.story-content {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.story-label {
+    color: #d59a67;
+
+    font-size: .72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.story-content h2 {
+    font-family: 'Playfair Display', serif;
+
+    color: #fffaf3;
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 35px;
+}
+
+.story-content p {
+    max-width: 720px;
+
+    color: #bbaaa1;
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+
+/* VALUES */
+
+.values-section {
+    padding: 110px 8%;
+
+    background: #17100e;
+}
+
+.values-section .section-heading {
+    margin-bottom: 60px;
+
+    text-align: center;
+}
+
+.values-section .section-heading p {
+    color: #d59a67;
+}
+
+.values-section .section-heading h2 {
+    color: #fffaf3;
+}
+
+.values-section .section-heading span {
+    display: block;
+
+    margin-top: 15px;
+
+    color: #a9958b;
+}
+
+.values-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.value-card {
+    padding: 40px 30px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b2a23,
+            #281c18
+        );
+
+    border: 1px solid rgba(213,154,103,0.16);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.25);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(213,154,103,0.45);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.35);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 1.8rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0d7bb,
+            #c99d75
+        );
+}
+
+.value-card h3 {
+    font-family: 'Playfair Display', serif;
+
+    color: #fffaf3;
+
+    font-size: 1.7rem;
+
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    color: #bbaaa1;
+
+    font-size: .9rem;
+
+    line-height: 1.7;
+}
+
+
+/* EXPERIENCE */
+
+.about-experience {
+    min-height: 450px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 8%;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(183,121,69,0.20),
+            transparent 30%
+        ),
+        #17100e;
+}
+
+.about-experience > div {
+    max-width: 750px;
+}
+
+.about-experience p {
+    color: #d59a67;
+
+    font-size: .72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.about-experience h2 {
+    font-family: 'Playfair Display', serif;
+
+    color: #fffaf3;
+
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.about-experience span {
+    color: #bbaaa1;
+
+    font-size: 1rem;
+}
+
+
+/* CTA */
+
+.about-cta {
+    text-align: center;
+
+    padding: 110px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b77945,
+            #8d5936
+        );
+
+    color: white;
+}
+
+.about-cta > p {
+    font-size: .7rem;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.about-cta h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 30px;
+}
+
+.about-cta .primary-button {
+    background: #211815;
+
+    color: #fffaf3;
+}
+
+.about-cta .primary-button:hover {
+    background: #fffaf3;
+
+    color: #211815;
+}
+
+
+/* ABOUT RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .about-hero {
+        min-height: 70vh;
+
+        padding: 140px 7% 80px;
+    }
+
+    .story-section,
+    .values-section {
+        padding: 80px 6%;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-experience {
+        min-height: 400px;
+
+        padding: 80px 7%;
+    }
+
+}
+/* =========================================
+   CAFÉ NOIR — CONTACT PAGE
+========================================= */
+
+.contact-page {
+    background: #211815;
+    color: #fffaf3;
+}
+
+
+/* CONTACT HERO */
+
+.contact-hero {
+    min-height: 65vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 160px 8% 100px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(183,121,69,0.22),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(183,121,69,0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #211815,
+            #3b2922
+        );
+}
+
+.contact-hero-content {
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.contact-hero-content > p:first-child {
+    color: #d59a67;
+
+    font-size: .72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.contact-hero-content h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(3.5rem, 8vw, 6rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+}
+
+.contact-hero-content h1 span {
+    color: #d59a67;
+
+    font-style: italic;
+}
+
+.contact-hero-content > p:last-child {
+    max-width: 550px;
+
+    margin: auto;
+
+    color: #c7b8b0;
+
+    line-height: 1.8;
+}
+
+
+/* CONTACT DETAILS */
+
+.contact-details {
+    padding: 110px 8%;
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #30221d,
+            #211815
+        );
+}
+
+
+/* INFO */
+
+.contact-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    justify-content: center;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b2a23,
+            #281c18
+        );
+
+    border: 1px solid rgba(213,154,103,0.14);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(8px);
+
+    border-color: rgba(213,154,103,0.4);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0d7bb,
+            #c99d75
+        );
+
+    font-size: 1.2rem;
+}
+
+.contact-item h3 {
+    font-family: 'Playfair Display', serif;
+
+    color: #fffaf3;
+
+    font-size: 1.3rem;
+
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    color: #bbaaa1;
+
+    font-size: .9rem;
+
+    line-height: 1.6;
+}
+
+
+/* FORM */
+
+.contact-form-box {
+    padding: 45px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b2a23,
+            #281c18
+        );
+
+    border: 1px solid rgba(213,154,103,0.18);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
+}
+
+.form-label {
+    color: #d59a67;
+
+    font-size: .7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.contact-form-box h2 {
+    font-family: 'Playfair Display', serif;
+
+    color: #fffaf3;
+
+    font-size: 2.8rem;
+
+    line-height: 1.1;
+
+    margin-bottom: 35px;
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    color: #d8c9c1;
+
+    font-size: .8rem;
+
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(213,154,103,0.18);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #211815;
+
+    color: #fffaf3;
+
+    font-family: 'DM Sans', sans-serif;
+
+    font-size: .9rem;
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #796d67;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d59a67;
+
+    box-shadow:
+        0 0 0 3px rgba(213,154,103,0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form-box .primary-button {
+    border: none;
+
+    cursor: pointer;
+
+    background: #b77945;
+
+    color: #fffaf3;
+}
+
+.contact-form-box .primary-button:hover {
+    background: #d59a67;
+}
+
+
+/* BOTTOM */
+
+.contact-bottom {
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 90px 8%;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(183,121,69,0.18),
+            transparent 35%
+        ),
+        #17100e;
+}
+
+.contact-bottom p {
+    color: #d59a67;
+
+    font-size: .7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.contact-bottom h2 {
+    font-family: 'Playfair Display', serif;
+
+    color: #fffaf3;
+
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    line-height: 1.1;
+}
+
+
+/* CONTACT RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .contact-details {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .contact-hero {
+        min-height: 60vh;
+
+        padding: 140px 7% 80px;
+    }
+
+    .contact-details {
+        padding: 80px 6%;
+    }
+
+    .contact-form-box {
+        padding: 30px 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+}
